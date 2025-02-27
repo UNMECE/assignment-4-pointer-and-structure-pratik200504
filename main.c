@@ -51,7 +51,7 @@ void print_items(Item *item_list, int size)
 		printf("item category=%s\n", item_list[i].category);
 		printf("item price=%.2f\n", item_list[i].price);
 	}
-
+}
 int main(int argc, char *argv[])
 {
 	int size=5;
@@ -70,9 +70,8 @@ int main(int argc, char *argv[])
 
 	//calculate and print average price
 	double avg_price=average_price(item_list, size);
-	
-		printf("##############\n");
-		printf("average price of items=%f\n", avg_price);
+	printf("##############\n");
+	printf("average price of items=%f\n", avg_price);
 
 	//search for item by SKU
 	if(argc>1)
@@ -89,20 +88,42 @@ int main(int argc, char *argv[])
 		if (ct<5)
 		{
 			printf("##########");
-			printf("Item name=%s\n", item_list[i].name);
-			printf("item sku=%s\n", item_list[i].sku);
-			printf("Item category=%s\n", item_list[i].category);
-			printf("item price=%f\n", item_list[i].price);
+			printf("Item name=%s\n", item_list[ct].name);
+			printf("item sku=%s\n", item_list[ct].sku);
+			printf("Item category=%s\n", item_list[ct].category);
+			printf("item price=%f\n", item_list[ct].price);
 			printf("###########");
 		}
-		else
+		else{
 			printf("\nItem with sku %s not found.\n", search_sku);
-	}
-
-	//free the memory allocated for items
+			}
+}	//free the memory allocated for items
 	free_items(item_list, size);
-
-return 0.0;
-
+	return 0;
 }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
